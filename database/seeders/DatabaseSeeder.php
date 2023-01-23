@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +15,54 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        DB::table('departments')->insert(
+            [
+                'code' => 'B057',
+                'name' => 'Информационные технологии',
+            ],
+        );
+        DB::table('departments')->insert(
+            [
+                'code' => 'B058',
+                'name' => 'Информационная безопасность',
+            ],
+        );
+        DB::table('departments')->insert(
+            [
+                'code' => 'В042',
+                'name' => 'Журналистика и репортерское дело',
+            ],
+        );
+        DB::table('departments')->insert(
+            [
+                'code' => 'В044',
+                'name' => 'Менеджмент и управление',
+            ],
+        );
+        DB::table('departments')->insert(
+            [
+                'code' => 'В046',
+                'name' => 'Финансы, экономика, банковское и страховое дело',
+            ],
+        );
+        DB::table('departments')->insert(
+            [
+                'code' => 'M094',
+                'name' => 'Информационные технологии',
+            ],
+        );
+        DB::table('departments')->insert(
+            [
+                'code' => 'M096',
+                'name' => 'Коммуникации и коммуникационные технологии',
+            ],
+        );
+        DB::table('departments')->insert(
+            [
+                'code' => 'M072',
+                'name' => 'Менеджмент и управление',
+            ],
+        );
     }
+
 }

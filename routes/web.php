@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('welcome');
 
 Auth::routes();
 
@@ -27,6 +26,13 @@ Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'index']
 
 Route::get('/apply', [App\Http\Controllers\ApplyController::class, 'index'])->name('apply');
 
+Route::post('/apply', [App\Http\Controllers\ApplyController::class, 'store'])->name('apply.store');
+
+Route::get('/applications', [App\Http\Controllers\ApplicationsController::class, 'index'])->name('applications');
+
 Route::get('/universities', [App\Http\Controllers\UniversitiesController::class, 'index'])->name('universities');
 
 Route::get('/universities/create', [App\Http\Controllers\UniversitiesController::class, 'create'])->name('universities.create');
+
+Route::post('/universities/create', [App\Http\Controllers\UniversitiesController::class, 'store'])->name('universities.store');
+

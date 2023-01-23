@@ -32,8 +32,13 @@
                        class="mt-3 px-4 py-2 text-sm text-gray-600  dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">My applications</a>
                     <a href="{{route('contact')}}"
                        class="mt-3 px-4 py-2 text-sm text-gray-600  dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Contacts</a>
-                    <a href="{{route('universities')}}"
-                       class="mt-3 px-4 py-2 text-sm text-gray-600  dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Universities</a>
+                    @if(Auth::user()->is_admin)
+                        <a href="{{route('universities')}}"
+                           class="mt-3 px-4 py-2 text-sm text-gray-600  dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Universities</a>
+                        <a href="{{route('applications')}}"
+                           class="mt-3 px-4 py-2 text-sm text-gray-600  dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Applications</a>
+
+                    @endif
                 </nav>
             </div>
 
