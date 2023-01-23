@@ -26,3 +26,7 @@ Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])
 Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 
 Route::get('/apply', [App\Http\Controllers\ApplyController::class, 'index'])->name('apply');
+
+Route::get('/universities', [App\Http\Controllers\UniversitiesController::class, 'index'])->name('universities');
+
+Route::get('/universities/create', [App\Http\Controllers\UniversitiesController::class, 'create'])->name('universities.create');
