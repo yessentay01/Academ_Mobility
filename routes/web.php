@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SendEmailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,4 @@ Route::get('/universities/create', [App\Http\Controllers\UniversitiesController:
 
 Route::post('/universities/create', [App\Http\Controllers\UniversitiesController::class, 'store'])->name('universities.store');
 
+Route::get('send-email', [SendEmailController::class, 'sendEmail']);

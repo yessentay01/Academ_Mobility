@@ -27,7 +27,7 @@
                                     <input type="date" name="deadline" value="{{ old('deadline') }}" id="deadline"  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                 </div>
                                 <div class="col-span-6 sm:col-span-6">
-                                    <label for="count" class="block text-sm font-medium text-gray-700">Number of seats</label>
+                                    <label for="count" class="block text-sm font-medium text-gray-700">Number of students</label>
                                     <input type="number" value="{{ old('count') }}" name="count" id="count" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                 </div>
                                 <div class="col-span-6 sm:col-span-6">
@@ -37,7 +37,7 @@
                                             @foreach($departments as $department)
                                                 <div class="flex items-start">
                                                     <div class="flex items-center h-5">
-                                                        <input id="{{$department->code}}" checked="{{old('department->code')}}"  name="{{$department->code}}" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                                        <input id="{{$department->code}}" {{ old($department->code) == 'on' ? "checked" : "" }}  name="{{$department->code}}" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                                                     </div>
                                                     <div class="ml-3 text-sm">
                                                         <label for="{{$department->code}}" class="font-medium text-gray-700">{{$department->code}} {{$department->name}}</label>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="col-span-6 sm:col-span-6">
                                     <label for="start" class="block text-sm font-medium text-gray-700" >Start</label>
-                                    <input type="date" name="start" id="start"  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+                                    <input type="date" name="start" id="start" value="{{ old('start') }}"  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
                                 </div>
                                 <div class="col-span-6 sm:col-span-6">
                                     <label for="information" class="block text-sm font-medium text-gray-700">

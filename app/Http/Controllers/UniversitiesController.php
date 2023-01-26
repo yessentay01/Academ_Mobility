@@ -40,7 +40,8 @@ class UniversitiesController extends Controller
         ]);
 
         if ($request->cover_image) {
-            $imgName = time() . '.' . $request->cover_image->extension(); // .png, .jpg
+           // $imgName = time() . '.' . $request->cover_image->extension(); // .png, .jpg
+            $imgName = $request->cover_image->hashName();
             $request->cover_image->storeAs('media/universities/', $imgName, 'public');
         }
 

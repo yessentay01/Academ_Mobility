@@ -1,6 +1,85 @@
 @extends('layouts.main')
 @section('title', 'My applications')
 @section('content')
+    <head>
+        <style>
+            .stepper-wrapper {
+                margin-top: auto;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .stepper-item {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex: 1;
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
+            }
+
+            .stepper-item::before {
+                position: absolute;
+                content: "";
+                border-bottom: 2px solid #ccc;
+                width: 100%;
+                top: 20px;
+                left: -50%;
+                z-index: 2;
+            }
+
+            .stepper-item::after {
+                position: absolute;
+                content: "";
+                border-bottom: 2px solid #ccc;
+                width: 100%;
+                top: 20px;
+                left: 50%;
+                z-index: 2;
+            }
+
+            .stepper-item .step-counter {
+                position: relative;
+                z-index: 5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #ccc;
+                margin-bottom: 6px;
+            }
+
+            .stepper-item.active {
+                font-weight: bold;
+            }
+
+            .stepper-item.completed .step-counter {
+                background-color: #3B82F6;
+            }
+
+            .stepper-item.completed::after {
+                position: absolute;
+                content: "";
+                border-bottom: 2px solid #3B82F6;
+                width: 100%;
+                top: 20px;
+                left: 50%;
+                z-index: 3;
+            }
+
+            .stepper-item:first-child::before {
+                content: none;
+            }
+            .stepper-item:last-child::after {
+                content: none;
+            }
+        </style>
+    </head>
     <a href="{{route('apply')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Apply for academic mobility
     </a>
@@ -10,6 +89,26 @@
         <div class="mt-5 md:col-span-2 md:mt-0 ">
             <div class="shadow sm:overflow-hidden sm:rounded-md">
                 <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+
+                    <div class="stepper-wrapper">
+                        <div class="stepper-item completed">
+                            <div class="step-counter text-md  font-medium text-gray-700">1</div>
+                            <div class="step-name text-md font-medium text-gray-700">First</div>
+                        </div>
+                        <div class="stepper-item completed">
+                            <div class="step-counter text-md font-medium text-gray-700">2</div>
+                            <div class="step-name text-md font-medium text-gray-700">Second</div>
+                        </div>
+                        <div class="stepper-item completed">
+                            <div class="step-counter text-md font-medium text-gray-700">3</div>
+                            <div class="step-name text-md  font-medium text-gray-700">Third</div>
+                        </div>
+                        <div class="stepper-item completed">
+                            <div class="step-counter text-md  font-medium text-gray-700">4</div>
+                            <div class="step-name text-md font-medium text-gray-700">Forth</div>
+                        </div>
+                    </div>
+
                     <ul>
                         <li class="text-gray-400">created at {{$apply->created_at}}</li>
                         <li class="block text-md m-3 font-medium text-gray-700">Email: {{$apply->email}}</li>
