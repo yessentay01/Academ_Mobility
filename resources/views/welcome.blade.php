@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
                     <span class="ml-3 text-xl">IITU ACADEMIC MOBILITY</span>
                 </a>
                 <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                    <a class="mr-5 hover:text-gray-900 cursor-pointer">Why do i need it?</a>
-                    <a class="mr-5 hover:text-gray-900 cursor-pointer">Universities</a>
+{{--                    <a class="mr-5 hover:text-gray-900 cursor-pointer">Why do i need it?</a>--}}
+{{--                    <a class="mr-5 hover:text-gray-900 cursor-pointer">Universities</a>--}}
                 </nav>
                 @if (Route::has('login'))
                     <div>
@@ -327,9 +327,9 @@
                 </div>
                 <div class="flex flex-wrap -m-4">
                     @foreach($universities as $university)
-                            <a href="#!" class="xl:w-1/4 md:w-1/2 p-4 overflow-hidden" style="height: 400px">
+                            <a href="{{route('detail', $university->id)}}" class="xl:w-1/4 md:w-1/2 p-4 overflow-hidden" style="height: 400px">
                                 <div class="bg-gray-100 p-6 rounded-lg h-full">
-                                    <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
+                                    <img class="h-40 rounded w-full object-cover object-center mb-6" src="{{url('storage/media/universities/' . $university->images) }}" alt="content">
                                     <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">{{$university->country}}</h3>
                                     <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{{$university->name}}</h2>
                                     <p class="leading-relaxed text-base" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{$university->information}}</p>
@@ -347,7 +347,7 @@
         <footer class="text-gray-600 body-font">
             <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                 <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                     </svg>
                     <span class="ml-3 text-xl">IITU ACADEMIC MOBILITY</span>

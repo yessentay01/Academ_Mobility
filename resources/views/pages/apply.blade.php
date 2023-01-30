@@ -132,9 +132,7 @@
                                     <option value="Bachelor 1 course" {{ old('course') == "Bachelor 1 course" ? "selected" : "" }} >Bachelor 1 year</option>
                                     <option value="Bachelor 2 course" {{ old('course') == "Bachelor 2 course" ? "selected" : "" }} >Bachelor 2 year</option>
                                     <option value="Bachelor 3 course" {{ old('course') == "Bachelor 3 course" ? "selected" : "" }} >Bachelor 3 year</option>
-                                    <option value="Bachelor 4 course" {{ old('course') == "Bachelor 4 course" ? "selected" : "" }} >Bachelor 4 year</option>
                                     <option value="Master 1 course" {{ old('course') == "Master 1 course" ? "selected" : "" }} >Master 1 year</option>
-                                    <option value="Master 2 course" {{ old('course') == "Master 2 course" ? "selected" : "" }} >Master 2 year</option>
                                 </select>
                             </div>
                             <div class="col-span-6 sm:col-span-3">
@@ -147,6 +145,34 @@
                                  </select>
                             </div>
                             <div class="col-span-6 sm:col-span-3">
+                                <label class="block text-sm font-medium text-gray-700">Group *</label>
+                                <div class="mt-1 flex rounded-md shadow-sm">
+                                    <input type="text" name="group"  value="{{old('group')}}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" required>
+                                </div>
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label class="block text-sm font-medium text-gray-700">ID *</label>
+                                <div class="mt-1 flex rounded-md shadow-sm">
+                                    <input type="text" name="student_id"  value="{{old('student_id')}}" class="student_id mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" required>
+                                </div>
+                            </div>
+
+                            <div class="col-span-6 sm:col-span-3">
+                                <label class="block text-sm font-medium text-gray-700">GPA *</label>
+                                <div class="mt-1 flex rounded-md shadow-sm">
+                                    <input type="text" name="gpa"  value="{{old('gpa')}}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" required>
+                                </div>
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="level" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">English Level *</label>
+                                <select id="level" name="level" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                    <option selected="true" value="" disabled="disabled">Choose Level</option>
+                                    @foreach($levels as $level)
+                                        <option value="{{$level->name}}" {{ old('level') == $level->name ? "selected" : "" }}>{{$level->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
                                 <label for="university" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select University *</label>
                                 <select id="university" name="university" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                                     <option selected="true" value="" disabled="disabled">Choose University</option>
@@ -155,6 +181,31 @@
                                     @endforeach
                                 </select>
                             </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden sm:block" aria-hidden="true">
+            <div class="py-5">
+                <div class="border-t border-gray-200"></div>
+            </div>
+        </div>
+
+        <div class="mt-10 sm:mt-0">
+            <div class="md:grid md:grid-cols-3 md:gap-6">
+                <div class="md:col-span-1">
+                    <div class="px-4 sm:px-0">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Required documents</h3>
+                        {{--                    <p class="mt-1 text-sm text-gray-600">Decide which communications you'd like to receive and how.</p>--}}
+                    </div>
+                </div>
+                <div class="mt-5 md:col-span-2 md:mt-0">
+                    <div class="overflow-hidden shadow sm:rounded-md">
+                        <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
                             <div class="col-span-6">
                                 <label for="transcript" class="block text-sm font-medium text-gray-700">Transcript in English *</label>
                                 <input type="file" name="transcript"  id="transcript" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
@@ -249,6 +300,8 @@
             $('.phone').inputmask('+7 (999)-999-9999');
             $('.iin').inputmask('999999999999');
             $('.pasport').inputmask('N99999999');
+            $('.student_id').inputmask('99999');
+
         });
     </script>
 @endsection

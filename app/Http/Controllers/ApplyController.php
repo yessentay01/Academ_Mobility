@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Apply;
 use App\Models\Department;
+use App\Models\Level;
 use App\Models\University;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class ApplyController extends Controller
     {
         $universities = University::all();
         $departments = Department::all();
-        return view('pages.apply', compact('universities', 'departments'));
+        $levels = Level::all();
+        return view('pages.apply', compact('universities', 'departments', 'levels'));
     }
 
     public function store(Request $request){
@@ -67,6 +69,10 @@ class ApplyController extends Controller
             'passport_scan'=>$passport_scan_name,
             'course'=>$request->course,
             'speciality'=>$request->speciality,
+            'group'=>$request->group,
+            'student_id'=>$request->student_id,
+            'gpa'=>$request->gpa,
+            'level'=>$request->level,
             'university'=>$request->university,
             'transcript'=>$transcript_name,
             'motivation'=>$motivation_name,

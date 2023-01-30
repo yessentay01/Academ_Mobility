@@ -27,6 +27,10 @@ return new class extends Migration
             $table->string('passport_scan');
             $table->string('course');
             $table->string('speciality');
+            $table->string('group');
+            $table->string('student_id');
+            $table->string('gpa');
+            $table->string('level');
             $table->string('university');
             $table->string('transcript');
             $table->string('motivation');

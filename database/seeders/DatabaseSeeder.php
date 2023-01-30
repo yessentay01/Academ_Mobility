@@ -63,6 +63,40 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Менеджмент и управление',
             ],
         );
+
+        DB::table('levels')->insert(
+            [
+                'name' => 'A1 Elementary',
+            ],
+        );
+        DB::table('levels')->insert(
+            [
+                'name' => 'A2 Pre Intermediate',
+            ],
+        );
+        DB::table('levels')->insert(
+            [
+                'name' => 'B1 Intermediate',
+            ],
+        );
+        DB::table('levels')->insert(
+            [
+                'name' => 'B2 Upper Intermediate',
+            ],
+        );
+        DB::table('levels')->insert(
+            [
+                'name' => 'C1 Advanced',
+            ],
+        );
+        DB::table('levels')->insert(
+            [
+                'name' => 'C2 Proficient',
+            ],
+        );
+
+
+
     }
 
 }

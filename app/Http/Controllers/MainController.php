@@ -12,4 +12,10 @@ class MainController extends Controller
         $universities = University::all();
         return view('welcome', compact('universities'));
     }
+    public function detail($id)
+    {
+        $university = University::findorfail($id);
+        return view('pages.university', compact('university'));
+    }
+
 }

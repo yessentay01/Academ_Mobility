@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SendEmailController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('welcome');
+Route::get('/university/{id}', [App\Http\Controllers\MainController::class, 'detail'])->name('detail');
 
 Auth::routes();
 
