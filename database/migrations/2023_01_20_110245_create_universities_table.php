@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('images');
             $table->string('name');
             $table->string('country');
+            $table->string('website');
             $table->string('deadline');
             $table->string('count');
             $table->string('departments');

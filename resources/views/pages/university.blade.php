@@ -35,6 +35,29 @@
             @endif
         </div>
     </header>
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="w-full mb-20">
+                <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+                    <h3 class="tracking-widest text-indigo-500 text-s font-medium title-font">{{$university->country}}</h3>
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">{{$university->name}}</h1>
+                    <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+                </div>
+                <p class="text-gray-500 mt-6 mb-3">{{$university->information}} </p>
+                <h2 class="text-l font-medium mb-2 text-gray-900">Deadline: <b> {{$university->deadline}}</b> </h2>
+                <h2 class="text-l font-medium mb-2 text-gray-900">Number of students: {{$university->count}} </h2>
+                <h2 class="text-l font-medium mb-2 text-gray-900">Groups of educational programs that are suitable:</h2>
+                {!! $university->departments !!}
+                <br>
+                <br>
+                <a href="" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">COST BY COUNTRY
+                </a>
+            </div>
+        </div>
+    </section>
+
+
     <footer class="text-gray-600 body-font">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
@@ -70,5 +93,51 @@
                     </span>
         </div>
     </footer>
+    <script>
+        var deadline = new Date(Date.parse('2023-09-18'));
+
+        function getTimeRemaining(endtime) {
+            var t = Date.parse(endtime) - Date.parse(new Date());
+            var seconds = Math.floor((t / 1000) % 60);
+            var minutes = Math.floor((t / 1000 / 60) % 60);
+            var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+            return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+        }
+
+        function initializeClock(id, endtime) {
+            var clock = document.getElementById(id);
+            var daysSpan = clock.querySelector('.days');
+            var hoursSpan = clock.querySelector('.hours');
+            var minutesSpan = clock.querySelector('.minutes');
+            var secondsSpan = clock.querySelector('.seconds');
+
+            function updateClock() {
+                var t = getTimeRemaining(endtime);
+
+                daysSpan.innerHTML = t.days;
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                if (t.total <= 0) {
+                    clearInterval(timeinterval);
+                }
+            }
+
+            updateClock();
+            var timeinterval = setInterval(updateClock, 1000);
+        }
+
+
+        initializeClock('clockdiv', deadline);
+
+    </script>
 </body>
 </html>

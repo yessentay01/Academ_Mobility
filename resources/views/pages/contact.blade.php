@@ -10,16 +10,22 @@
                 <div class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 px-3 lg:px-6">
                     <h2 class="text-3xl font-bold mb-6">Contact us</h2>
                     <p class="text-gray-500 mb-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Laudantium, modi accusantium ipsum corporis quia asperiores
-                        dolorem nisi corrupti eveniet dolores ad maiores repellendus enim
-                        autem omnis fugiat perspiciatis? Ad, veritatis.
+                       <b> Уважаемые студенты !</b> <br>
+
+
+                        При объявлении набора на академическую мобильность в ВУЗ-Партнеры на любой семестр учебного года вам необходимо следовать дальнейшим инструкциям.
+                        <br>
+
+
+                        При прохождении конкурсной комиссии обучение в выбранном вами университетом - бесплатное <br>
+
+                        Перелет, проживание, виза, медицинская страховка и личные расходы оплачиваются самим студентом.
+                        <br>
                     </p>
                     <p class="text-gray-500 mb-2"><a target="_blank"  href="https://2gis.kz/almaty/firm/9429940000793107?m=76.909876%2C43.235296%2F16.75">
                             <span> Манаса 34/1</span>
                         </a></p>
-                    <p class="text-gray-500 mb-2">+ 01 234 567 89</p>
-                    <p class="text-gray-500 mb-2">info@gmail.com</p>
+                    <p class="text-gray-500 mb-2"><a href="mailto: int@iitu.edu.kz">int@iitu.edu.kz</a></p>
                 </div>
                 <div class="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full md:w-6/12 px-3 lg:px-6">
                     <form>

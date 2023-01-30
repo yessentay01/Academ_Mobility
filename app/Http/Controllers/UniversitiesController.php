@@ -58,6 +58,7 @@ class UniversitiesController extends Controller
             'images' => $imgName,
             'name' => $request->name,
             'country' => $request->country,
+            'website' => $request->website,
             'deadline' => $request->deadline,
             'count' => $request->count,
             'departments' => implode(" \n",$departmentsList),
