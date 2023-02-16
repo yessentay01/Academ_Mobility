@@ -153,7 +153,7 @@
                 .responsive.recalc();
         });
         function detailPage(id) {
-            alert("Row index is: " + id);
+            window.open(`/applications/${id}`, '_blank').focus();
         }
     </script>
 @endsection

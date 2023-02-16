@@ -33,6 +33,9 @@ Route::post('/apply', [App\Http\Controllers\ApplyController::class, 'store'])->n
 
 Route::get('/applications', [App\Http\Controllers\ApplicationsController::class, 'index'])->name('applications');
 
+Route::get('/applications/{id}', [App\Http\Controllers\ApplicationsController::class, 'application'])->name('application');
+
+
 Route::get('/universities', [App\Http\Controllers\UniversitiesController::class, 'index'])->name('universities');
 
 Route::get('/universities/create', [App\Http\Controllers\UniversitiesController::class, 'create'])->name('universities.create');

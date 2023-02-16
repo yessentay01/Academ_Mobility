@@ -22,4 +22,13 @@ class ApplicationsController extends Controller
         return view('pages.applications', compact('applies'));
 
     }
+
+    public function application($id){
+        $user = auth()->user();
+        if(!$user['is_admin']) {
+            return redirect()->route('home');
+        }
+        $application = Apply::findorfail($id);
+        return view('pages.application', compact('application'));
+    }
 }

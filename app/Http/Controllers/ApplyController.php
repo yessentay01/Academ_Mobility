@@ -20,6 +20,12 @@ class ApplyController extends Controller
         $universities = University::all();
         $departments = Department::all();
         $levels = Level::all();
+
+        $user = auth()->user()->toArray();
+        $applies = Apply::where('email', '=', $user['email'])->get();
+        if (count($applies) != 0){
+            return redirect()->route('home');
+        }
         return view('pages.apply', compact('universities', 'departments', 'levels'));
     }
 
