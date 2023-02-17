@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Apply;
 use App\Models\Department;
 use App\Models\Level;
+use App\Models\status;
 use App\Models\University;
 use Illuminate\Http\Request;
 
@@ -87,7 +88,13 @@ class ApplyController extends Controller
             'responsible_person'=>$request->responsible_person,
             'responsible_contact'=>$request->responsible_contact,
         ]);
-
+        $application_id = Apply::where('email', '=', $user['email'])->get()->last();
+        status::create([
+            'admin_id' => 'root',
+            'application_id' => $application_id->id,
+            'status' => 'Not reviewed',
+            'comment' => '',
+        ]);
         return redirect()->route('home')->with('success', 'Apply created successfully');
 
     }
