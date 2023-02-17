@@ -31,7 +31,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="w-1/3 flex justify-between h-1 items-center relative   {{ $status->status == 'Verified' || $status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline'  ? 'bg-blue-600' : ''  }}">
+                                <div class="w-1/3 flex justify-between h-1 items-center relative   {{isset($status->status) && ($status->status == 'Verified' || $status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline')  ? 'bg-blue-600' : ''  }}">
                                     @if($status->status == 'Need changes')
                                     <span class="absolute left-0 bottom-5  text-md font-medium text-yellow-500" style="left: -40px">Need changes</span>
                                     <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -ml-2 relative">
