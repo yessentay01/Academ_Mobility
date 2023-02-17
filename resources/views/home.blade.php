@@ -32,12 +32,12 @@
                                     </div>
                                 </div>
                                 <div class="w-1/3 flex justify-between h-1 items-center relative   {{isset($status->status) && ($status->status == 'Verified' || $status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline')  ? 'bg-blue-600' : ''  }}">
-                                    @if($status->status == 'Need changes')
+                                    @if(isset($status->status) && ($status->status == 'Need changes'))
                                     <span class="absolute left-0 bottom-5  text-md font-medium text-yellow-500" style="left: -40px">Need changes</span>
                                     <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -ml-2 relative">
                                         <div class="h-3 w-3 bg-yellow-600 rounded-full z-1"></div>
                                     </div>
-                                    @elseif($status->status == 'Verified' || $status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline' )
+                                    @elseif(isset($status->status) && ($status->status == 'Verified' || $status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline' ))
                                         <span class="absolute left-0 bottom-5  text-md font-medium text-blue-700" style="left: -17px">Verified</span>
                                         <div class="bg-blue-600 h-6 w-6 rounded-full shadow flex items-center justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,7 +51,7 @@
                                             <div class="h-3 w-3 bg-blue-600 rounded-full z-1"></div>
                                         </div>
                                     @endif
-                                    @if($status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline' )
+                                    @if(isset($status->status) && ( $status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline' ))
                                         <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -mr-3 relative">
                                             <span class="absolute left-0 bottom-5  text-md font-medium text-blue-700" style="bottom: 30px;left: -25px;">Confirmed</span>
                                             <div class="bg-blue-600 h-6 w-6 rounded-full shadow flex items-center justify-center">
@@ -61,7 +61,7 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        @elseif ($status->status == 'Verified')
+                                        @elseif (isset($status->status) && ($status->status == 'Verified'))
                                         <div class="bg-white  flex items-center justify-center -mr-3 relative">
                                             <span class="absolute left-0 bottom-5  text-md font-medium text-gray-500" style="bottom: 30px;left: -25px;">Confirmed</span>
                                             <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -ml-2 relative">
@@ -77,7 +77,7 @@
                                             </div>
                                         @endif
                                 </div>
-                                @if($status->status == 'Accept')
+                                @if(isset($status->status) && ($status->status == 'Accept'))
                                 <div class="w-1/3 flex justify-end relative">
                                     <span class="absolute right-0 bottom-5  text-md font-medium text-blue-700" style="bottom: 30px;">Accept</span>
                                     <div class="bg-blue-600 h-6 w-6 rounded-full shadow flex items-center justify-center">
@@ -87,7 +87,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                @elseif($status->status == 'Decline')
+                                @elseif(isset($status->status) && ($status->status == 'Decline'))
                                     <div class="w-1/3 flex justify-end relative">
                                         <span class="absolute right-0 bottom-5  text-md font-medium text-gray-500" style="bottom: 30px;">Decline</span>
                                         <div class="bg-red-600 h-6 w-6 rounded-full shadow flex items-center justify-center">
@@ -107,7 +107,7 @@
                         </div>
                     </dh-component>
                 </div>
-                @if($status->status == 'Need changes')
+                @if(isset($status->status) && ($status->status == 'Need changes'))
                 <div>
                     <br>
                     <br>
