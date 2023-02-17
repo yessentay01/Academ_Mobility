@@ -5,10 +5,12 @@
     <a href="{{route('apply')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Apply for academic mobility
     </a>
-    @elseif($status->status == 'Need changes')
+    @elseif(isset($status->status))
+        @if($status->status == 'Need changes')
         <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">
             Edit
         </a>
+        @endif
     @endif
     <br>
     @foreach($applies as $apply)
