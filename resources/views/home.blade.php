@@ -5,7 +5,7 @@
     <a href="{{route('apply')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Apply for academic mobility
     </a>
-    @else
+    @elseif($status->status == 'Need changes')
         <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">
             Edit
         </a>
@@ -28,30 +28,89 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="w-1/3 flex justify-between h-1 items-center relative">
-                                    <span class="absolute left-0 bottom-5  text-md font-medium text-gray-500" style="left: -35px">Verification</span>
+                                <div class="w-1/3 flex justify-between h-1 items-center relative   {{ $status->status == 'Verified' || $status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline'  ? 'bg-blue-600' : ''  }}">
+                                    @if($status->status == 'Need changes')
+                                    <span class="absolute left-0 bottom-5  text-md font-medium text-yellow-500" style="left: -40px">Need changes</span>
                                     <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -ml-2 relative">
-                                        {{--                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">--}}
-                                        {{--                                                    <path stroke="none" d="M0 0h24v24H0z" />--}}
-                                        {{--                                                    <path d="M5 12l5 5l10 -10" />--}}
-                                        {{--                                                </svg>--}}
-                                        <div class="h-3 w-3 bg-blue-600 rounded-full z-1"></div>
+                                        <div class="h-3 w-3 bg-yellow-600 rounded-full z-1"></div>
                                     </div>
-                                    <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -mr-3 relative">
-                                        <span class="absolute left-0 bottom-5  text-md font-medium text-gray-500" style="bottom: 30px;left: -25px;">Confirmed</span>
-                                        {{--                                                <div class="h-3 w-3 bg-blue-600 rounded-full"></div>--}}
+                                    @elseif($status->status == 'Verified' || $status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline' )
+                                        <span class="absolute left-0 bottom-5  text-md font-medium text-blue-700" style="left: -17px">Verified</span>
+                                        <div class="bg-blue-600 h-6 w-6 rounded-full shadow flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" />
+                                                <path d="M5 12l5 5l10 -10" />
+                                            </svg>
+                                        </div>
+                                    @else
+                                        <span class="absolute left-0 bottom-5  text-md font-medium text-gray-500" style="left: -35px">Verification</span>
+                                        <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -ml-2 relative">
+                                            <div class="h-3 w-3 bg-blue-600 rounded-full z-1"></div>
+                                        </div>
+                                    @endif
+                                    @if($status->status == 'Confirmed' || $status->status == 'Accept' || $status->status == 'Decline' )
+                                        <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -mr-3 relative">
+                                            <span class="absolute left-0 bottom-5  text-md font-medium text-blue-700" style="bottom: 30px;left: -25px;">Confirmed</span>
+                                            <div class="bg-blue-600 h-6 w-6 rounded-full shadow flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                                    <path d="M5 12l5 5l10 -10" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        @elseif ($status->status == 'Verified')
+                                        <div class="bg-white  flex items-center justify-center -mr-3 relative">
+                                            <span class="absolute left-0 bottom-5  text-md font-medium text-gray-500" style="bottom: 30px;left: -25px;">Confirmed</span>
+                                            <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -ml-2 relative">
+                                                <div class="h-3 w-3 bg-blue-600 rounded-full z-1"></div>
+                                            </div>
+                                        </div>
+                                        @else
+                                            <div class="bg-white  flex items-center justify-center -mr-3 relative">
+                                                <span class="absolute left-0 bottom-5  text-md font-medium text-gray-500" style="bottom: 30px;left: -25px;">Confirmed</span>
+                                                <div class="bg-white h-6 w-6 rounded-full shadow flex items-center justify-center -ml-2 relative">
+
+                                                </div>
+                                            </div>
+                                        @endif
+                                </div>
+                                @if($status->status == 'Accept')
+                                <div class="w-1/3 flex justify-end relative">
+                                    <span class="absolute right-0 bottom-5  text-md font-medium text-blue-700" style="bottom: 30px;">Accept</span>
+                                    <div class="bg-blue-600 h-6 w-6 rounded-full shadow flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M5 12l5 5l10 -10" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                @elseif($status->status == 'Decline')
+                                    <div class="w-1/3 flex justify-end relative">
+                                        <span class="absolute right-0 bottom-5  text-md font-medium text-gray-500" style="bottom: 30px;">Decline</span>
+                                        <div class="bg-red-600 h-6 w-6 rounded-full shadow flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" />
+                                                <path d="M5 12l5 5l10 -10" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="w-1/3 flex justify-end relative">
+                                        <span class="absolute right-0 bottom-5  text-md font-medium text-gray-500" style="bottom: 30px;">Step 4</span>
                                         <div class="bg-white h-6 w-6 rounded-full shadow"></div>
                                     </div>
-                                </div>
-                                <div class="w-1/3 flex justify-end relative">
-                                    <span class="absolute right-0 bottom-5  text-md font-medium text-gray-500" style="bottom: 30px;">Step 4</span>
-                                    <div class="bg-white h-6 w-6 rounded-full shadow"></div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                     </dh-component>
                 </div>
-
+                @if($status->status == 'Need changes')
+                <div>
+                    <br>
+                    <br>
+                    <p class="text-lg font-medium leading-6 text-gray-900">Comment: {{$status->comment}}</p>
+                </div>
+                @endif
             </div>
             <div class="bg-white rounded p-6 mt-6">
                 <h2 class="text-lg font-medium leading-6 text-gray-900">Personal information</h2>

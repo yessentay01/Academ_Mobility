@@ -35,6 +35,7 @@ Route::get('/applications', [App\Http\Controllers\ApplicationsController::class,
 
 Route::get('/applications/{id}', [App\Http\Controllers\ApplicationsController::class, 'application'])->name('application');
 
+Route::post('/applications/status', [App\Http\Controllers\ApplicationsController::class, 'status'])->name('application.status');
 
 Route::get('/universities', [App\Http\Controllers\UniversitiesController::class, 'index'])->name('universities');
 

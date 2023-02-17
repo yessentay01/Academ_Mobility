@@ -115,13 +115,13 @@
                 </thead>
                 <tbody>
                 @foreach($applies as $apply)
-                    <tr onclick="detailPage({{$apply->id}})" >
+                    <tr onclick="detailPage({{$apply->application_id}})" >
                         <td>{{$apply->student_id}}</td>
                         <td>{{$apply->full_name}}</td>
                         <td>{{$apply->phone}}</td>
                         <td>{{$apply->group}}</td>
                         <td>{{$apply->university}}</td>
-                        <td>Не рассмотрено</td>
+                        <td>{{$apply->status ?? 'Not reviewed'}}</td>
                     </tr>
                 @endforeach
 
