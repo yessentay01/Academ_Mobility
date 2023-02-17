@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $user = auth()->user()->toArray();
         $applies = Apply::where('email', '=', $user['email'])->get();
-        $status = null;
+        $status = "";
         if (isset($applies)) {
             if (count($applies) > 0) {
                 $status = status::where('application_id', '=', $applies[0]->id)->get()->last();
