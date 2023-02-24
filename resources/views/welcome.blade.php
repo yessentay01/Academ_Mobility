@@ -53,7 +53,7 @@
                    </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                    <img class="object-cover object-center rounded" alt="hero" src="{{url('/images/main.jpeg')}}">
+                    <img class="object-cover object-center rounded" alt="hero" src="https://admin.vipusknik.kz/storage/1450/zdanie-universitetajpg.jpeg">
                 </div>
             </div>
         </section>
@@ -274,7 +274,7 @@
                             </div>
                         </div>
                     </div>
-                    <img class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12" src="https://dummyimage.com/1200x500" alt="step">
+                    <img class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12" src="https://pbs.twimg.com/media/DOTBVqwUQAAVwr1.jpg" alt="step">
                 </div>
             </div>
         </section>
