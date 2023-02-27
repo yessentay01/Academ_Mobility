@@ -33,11 +33,11 @@ class ApplyController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'passport_scan' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:2048', // 2MB
-            'transcript' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:2048', // 2MB
-            'motivation' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:2048', // 2MB
-            'confirmation' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:2048', // 2MB
-            'letter' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:2048', // 2MB
+            'passport_scan' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:8192', // 8MB
+            'transcript' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:8192', // 8MB
+            'motivation' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:8192', // 8MB
+            'confirmation' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:8192', // 8MB
+            'letter' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:8192', // 8MB
         ]);
         $user = auth()->user()->toArray();
 
