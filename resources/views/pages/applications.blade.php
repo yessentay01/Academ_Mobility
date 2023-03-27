@@ -110,7 +110,8 @@
                     <th data-priority="3">Phone number</th>
                     <th data-priority="4">Group</th>
                     <th data-priority="5">University</th>
-                    <th data-priority="6">Status</th>
+                    <th data-priority="6">Created</th>
+                    <th data-priority="7">Status</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -121,6 +122,7 @@
                         <td>{{$apply->phone}}</td>
                         <td>{{$apply->group}}</td>
                         <td>{{$apply->university}}</td>
+                        <td>{{$apply->created_at}}</td>
                         <td>{{$apply->status ?? 'Not reviewed'}}</td>
                     </tr>
                 @endforeach
