@@ -48,7 +48,7 @@
                 </b>
             </p>
             <div class="flex justify-center" style="display: flex; flex-direction: row; gap: 30px;">
-                <a href="{{url('/images/FACTSHEET.pdf')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">More</a>
+                <a href="{{url('/images/FACTSHEET.pdf')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Factsheet</a>
                 <a href="{{url('/images/LIST.xlsx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">List of disciplines</a>
             </div>
         </div>
