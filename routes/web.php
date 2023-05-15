@@ -43,4 +43,6 @@ Route::get('/universities/create', [App\Http\Controllers\UniversitiesController:
 
 Route::post('/universities/create', [App\Http\Controllers\UniversitiesController::class, 'store'])->name('universities.store');
 
+Route::get('/toiitu', [App\Http\Controllers\ToIITUController::class, 'index'])->name('toiitu');
+
 Route::get('send-email', [SendEmailController::class, 'sendEmail']);
