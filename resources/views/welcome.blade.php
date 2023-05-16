@@ -17,8 +17,8 @@
                     <span class="ml-3 text-xl">IITU ACADEMIC MOBILITY</span>
                 </a>
                 <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-{{--                    <a class="mr-5 hover:text-gray-900 cursor-pointer">Why do i need it?</a>--}}
-{{--                    <a class="mr-5 hover:text-gray-900 cursor-pointer">Universities</a>--}}
+                    <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('welcome') }}">Outcome</a>
+                    <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('toiitu') }}">Income</a>
                 </nav>
                 @if (Route::has('login'))
                     <div>

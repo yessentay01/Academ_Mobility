@@ -17,8 +17,8 @@
             <span class="ml-3 text-xl">IITU ACADEMIC MOBILITY</span>
         </a>
         <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            {{--                    <a class="mr-5 hover:text-gray-900 cursor-pointer">Why do i need it?</a>--}}
-            {{--                    <a class="mr-5 hover:text-gray-900 cursor-pointer">Universities</a>--}}
+            <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('welcome') }}">Outcome</a>
+            <a class="mr-5 hover:text-gray-900 cursor-pointer" href="{{ route('toiitu') }}">Income</a>
         </nav>
         @if (Route::has('login'))
             <div>
@@ -41,7 +41,7 @@
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">ACADEMIC MOBILITY PROGRAM</h1>
             <p class="mb-8 leading-relaxed">If you want to study on academic mobility at the international university of information technologies, then you need to register and apply on this platform
 
-                <br>
+                <br><br>
                 <b> DEADLINE: <br>
 
                     MAY-JUNE <br>
@@ -49,7 +49,7 @@
             </p>
             <div class="flex justify-center" style="display: flex; flex-direction: row; gap: 30px;">
                 <a href="{{url('/images/FACTSHEET.pdf')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Factsheet</a>
-                <a href="{{url('/images/LIST.xlsx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">List of disciplines</a>
+                <a href="{{url('/images/LIST.xlsx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">List of disciplines (Download)</a>
             </div>
         </div>
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
