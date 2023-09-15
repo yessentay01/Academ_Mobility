@@ -10,7 +10,24 @@ class MainController extends Controller
     public function index()
     {
         $universities = University::all();
-        return view('welcome', compact('universities'));
+        $deadLines = [
+            ["Altinbas University (Türkiye)", "05.10.23"],
+            ["Halic University (Türkiye)", "05.10.23"],
+            ["Istanbul Aidyn University (Türkiye)", "05.10.23"],
+            ["Kyungdong University (South Korea)", "30.09.23"],
+            ["INHA University (South Korea)", "20.09.23"],
+            ["KAIST (South Korea)", "30.09.23"],
+            ["Schmalkalden University (Germany)", "21.09.23"],
+            ["Adam Mickiewicz University (Poland)", "10.11.23"],
+            ["Innopolis University (Russia)", "05.10.23"],
+            ["ИТМО (Russia)", "05.10.23"],
+            ["ВШЭ (Russia)", "05.10.23"],
+            ["UNIVERSITY OF ŽILINA (Slovak)", "30.09.23"],
+            ["University of Debrecen (Hungary)", "30.09.23"],
+            ["ADA University (Azerbaijan)", "05.10.23"]
+        ];
+
+        return view('welcome', compact('universities', 'deadLines'));
     }
     public function detail($id)
     {
