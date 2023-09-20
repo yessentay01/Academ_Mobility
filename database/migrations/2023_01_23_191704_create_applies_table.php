@@ -39,6 +39,7 @@ return new class extends Migration
             $table->string('responsible_person')->nullable();;
             $table->string('responsible_contact')->nullable();;
             $table->timestamps();
+            $table->string('application_to_rector');
         });
     }
 
