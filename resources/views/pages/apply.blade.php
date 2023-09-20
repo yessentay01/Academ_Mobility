@@ -207,6 +207,13 @@
                     <div class="overflow-hidden shadow sm:rounded-md">
                         <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
                             <div class="col-span-6">
+                                <label for="application_to_rector" class="block text-sm font-medium text-gray-700">Personal application addressed to the Rector of IITU JSC, signed by the student and indicating the mobile phone number and email*</label>
+                                <input type="file" name="application_to_rector"  id="application_to_rector" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
+                                @error('application_to_rector')
+                                <p class="text-sm text-red-500"> {{ $message }} </p>
+                                @enderror
+                            </div>
+                            <div class="col-span-6">
                                 <label for="transcript" class="block text-sm font-medium text-gray-700">Transcript in English *</label>
                                 <input type="file" name="transcript"  id="transcript" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
                                 @error('transcript')
