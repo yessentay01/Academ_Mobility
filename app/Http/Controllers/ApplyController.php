@@ -92,7 +92,7 @@ class ApplyController extends Controller
             'letter'=>$letter_name,
             'responsible_person'=>$request->responsible_person,
             'responsible_contact'=>$request->responsible_contact,
-            'application_to_rector'=>$request->application_to_rector_name,
+            'application_to_rector'=>$application_to_rector_name,
         ]);
         $application_id = Apply::where('email', '=', $user['email'])->get()->last();
         status::create([
