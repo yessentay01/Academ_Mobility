@@ -45,8 +45,8 @@ class ApplyController extends Controller
 
 
         if ($request->application_to_rector) {
-            $application_to_rector = $request->application_to_rector->hashName();
-            $request->application_to_rector->storeAs('media/applies/', $application_to_rector, 'public');
+            $application_to_rector_name = $request->application_to_rector->hashName();
+            $request->application_to_rector->storeAs('media/applies/', $application_to_rector_name, 'public');
         }
         if ($request->passport_scan) {
             $passport_scan_name = $request->passport_scan->hashName();
@@ -92,7 +92,7 @@ class ApplyController extends Controller
             'letter'=>$letter_name,
             'responsible_person'=>$request->responsible_person,
             'responsible_contact'=>$request->responsible_contact,
-            'application_to_rector'=>$request->application_to_rector,
+            'application_to_rector'=>$request->application_to_rector_name,
         ]);
         $application_id = Apply::where('email', '=', $user['email'])->get()->last();
         status::create([
