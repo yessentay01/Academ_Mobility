@@ -33,6 +33,7 @@ class ApplyController extends Controller
     public function store(Request $request){
 
         $request->validate([
+            'application_to_rector' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
             'passport_scan' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
             'transcript' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
             'motivation' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
@@ -43,6 +44,10 @@ class ApplyController extends Controller
 
 
 
+        if ($request->application_to_rector) {
+            $application_to_rector = $request->application_to_rector->hashName();
+            $request->application_to_rector->storeAs('media/applies/', $application_to_rector, 'public');
+        }
         if ($request->passport_scan) {
             $passport_scan_name = $request->passport_scan->hashName();
             $request->passport_scan->storeAs('media/applies/', $passport_scan_name, 'public');
