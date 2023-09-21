@@ -27,6 +27,16 @@ Route::post('/home', [App\Http\Controllers\HomeController::class, 'deleter'])->n
 
 Route::post('/rectorApplicationChanger', [App\Http\Controllers\HomeController::class, 'rectorApplicationChanger'])->name('home.rectorApplicationChanger');
 
+Route::post('/transcriptChanger', [App\Http\Controllers\HomeController::class, 'transcriptChanger'])->name('home.transcriptChanger');
+
+Route::post('/letterChanger', [App\Http\Controllers\HomeController::class, 'letterChanger'])->name('home.letterChanger');
+
+Route::post('/motivationChanger', [App\Http\Controllers\HomeController::class, 'motivationChanger'])->name('home.motivationChanger');
+
+Route::post('/englishConfChanger', [App\Http\Controllers\HomeController::class, 'englishConfChanger'])->name('home.englishConfChanger');
+
+Route::post('/passportScanChanger', [App\Http\Controllers\HomeController::class, 'passportScanChanger'])->name('home.passportScanChanger');
+
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
 Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
