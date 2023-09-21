@@ -230,7 +230,7 @@
                             @error('application_to_rector')
                             <p class="text-sm text-red-500"> {{ $message }} </p>
                             @enderror
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded">Update</button>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" style="width: 106px !important;">Update</button>
                         </form>
                     </div>
                 </div>
