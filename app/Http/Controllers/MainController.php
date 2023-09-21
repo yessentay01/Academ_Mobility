@@ -17,7 +17,7 @@ class MainController extends Controller
             ["Kyungdong University (South Korea)", "30.09.23"],
             ["INHA University (South Korea)", "20.09.23"],
             ["KAIST (South Korea)", "30.09.23"],
-            ["Schmalkalden University (Germany)", "21.09.23"],
+            ["Schmalkalden University (Germany)", "10.11.23"],
             ["Adam Mickiewicz University (Poland)", "10.11.23"],
             ["Innopolis University (Russia)", "05.10.23"],
             ["ИТМО (Russia)", "05.10.23"],
