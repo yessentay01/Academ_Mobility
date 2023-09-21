@@ -46,4 +46,22 @@ class HomeController extends Controller
         }
         return redirect()->route('home')->with('success', 'Apply deleted successfully');
     }
+
+    public function rectorApplicationChanger(Request $request){
+        $request->validate([
+            'application_to_rector' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
+        ]);
+        $user = auth()->user()->toArray();
+
+        $application_to_rector_name = $request->application_to_rector->hashName();
+        $request->application_to_rector->storeAs('media/applies/', $application_to_rector_name, 'public');
+
+        $applies = Apply::where('email', '=', $user['email'])->get();
+        if (isset($applies)) {
+            if (count($applies) > 0) {
+                $applyUser = Apply::where('email', '=', $user['email'])->update(['application_to_rector'=>$application_to_rector_name]);
+            }
+        }
+        return redirect()->route('home')->with('success', 'Apply changed successfully');
+    }
 }
