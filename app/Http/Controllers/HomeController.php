@@ -44,6 +44,6 @@ class HomeController extends Controller
                 $applyUser = Apply::where('email', '=', $user['email'])->delete();
             }
         }
-
+        return redirect()->route('home')->with('success', 'Apply deleted successfully');
     }
 }
