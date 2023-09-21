@@ -224,13 +224,13 @@
                     <label class="block text-sm font-medium text-gray-700 pb-2">Application to rector</label>
                     <div class="mt-1 ">
                         <a class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" target="_blank"  href="{{url('storage/media/applies/' . $apply->application_to_rector) }}">Download</a>
-                        <form action="{{route('home.rectorApplicationChanger')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('home.rectorApplicationChanger')}}" method="POST" enctype="multipart/form-data" style="margin-top: 8px">
                             @csrf
-                            <input type="file" name="application_to_rector"  id="application_to_rector" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
+                            <input type="file" style="margin-bottom: 8px" name="application_to_rector"  id="application_to_rector" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
                             @error('application_to_rector')
                             <p class="text-sm text-red-500"> {{ $message }} </p>
                             @enderror
-                            <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150">Update</button>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded">Update</button>
                         </form>
                     </div>
                 </div>
