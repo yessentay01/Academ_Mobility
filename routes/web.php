@@ -23,6 +23,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::post('/home', [App\Http\Controllers\ApplyController::class, 'deleter'])->name('home.deleter');
+
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
 Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
