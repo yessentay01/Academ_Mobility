@@ -35,4 +35,15 @@ class HomeController extends Controller
         }
         return view('home', compact('applies', 'status'));
     }
+
+    public function deleter(){
+        $user = auth()->user()->toArray();
+        $applies = Apply::where('email', '=', $user['email'])->get();
+        if (isset($applies)) {
+            if (count($applies) > 0) {
+                $applyUser = Apply::where('email', '=', $user['email'])->delete();
+            }
+        }
+
+    }
 }
