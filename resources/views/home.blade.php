@@ -170,6 +170,14 @@
                     <label class="block text-sm font-medium text-gray-700 pb-3">Passport scan </label>
                     <div class="mt-1">
                         <a class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" target="_blank"  href="{{url('storage/media/applies/' . $apply->passport_scan) }}">Download</a>
+                        <form action="{{route('home.passportScanChanger')}}" method="POST" enctype="multipart/form-data" style="margin-top: 12px">
+                            @csrf
+                            <input type="file" name="passport_scan" id="passport_scan" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"  class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
+                            @error('passport_scan')
+                            <p class="text-sm text-red-500"> {{ $message }} </p>
+                            @enderror
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" style="width: 106px !important;">Update</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -238,24 +246,56 @@
                     <label class="block text-sm font-medium text-gray-700 pb-2">Transcript in English</label>
                     <div class="mt-1 ">
                         <a class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" target="_blank"  href="{{url('storage/media/applies/' . $apply->transcript) }}">Download</a>
+                        <form action="{{route('home.transcriptChanger')}}" method="POST" enctype="multipart/form-data" style="margin-top: 12px">
+                            @csrf
+                            <input type="file" name="transcript"  id="transcript" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
+                            @error('transcript')
+                            <p class="text-sm text-red-500"> {{ $message }} </p>
+                            @enderror
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" style="width: 106px !important;">Update</button>
+                        </form>
                     </div>
                 </div>
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700 pb-2">Motivation letter</label>
                     <div class="mt-1">
                         <a class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" target="_blank"  href="{{url('storage/media/applies/' . $apply->motivation) }}">Download</a>
+                        <form action="{{route('home.motivationChanger')}}" method="POST" enctype="multipart/form-data" style="margin-top: 12px">
+                            @csrf
+                            <input type="file" name="motivation"  id="motivation" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
+                            @error('motivation')
+                            <p class="text-sm text-red-500"> {{ $message }} </p>
+                            @enderror
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" style="width: 106px !important;">Update</button>
+                        </form>
                     </div>
                 </div>
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700 pb-2">Confirmation of knowledge of English</label>
                     <div class="mt-1 ">
                         <a class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" target="_blank"  href="{{url('storage/media/applies/' . $apply->confirmation) }}">Download</a>
+                        <form action="{{route('home.englishConfChanger')}}" method="POST" enctype="multipart/form-data" style="margin-top: 12px">
+                            @csrf
+                            <input type="file" name="confirmation" id="confirmation" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"  class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
+                            @error('confirmation')
+                            <p class="text-sm text-red-500"> {{ $message }} </p>
+                            @enderror
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" style="width: 106px !important;">Update</button>
+                        </form>
                     </div>
                 </div>
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700 pb-2">A letter of recommendation from the head of the department, or a teacher in the disciplines (at least an assistant professor) </label>
                     <div class="mt-1">
                         <a class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" target="_blank"  href="{{url('storage/media/applies/' . $apply->letter) }}">Download</a>
+                        <form action="{{route('home.letterChanger')}}" method="POST" enctype="multipart/form-data" style="margin-top: 12px">
+                            @csrf
+                            <input type="file" name="letter" id="letter" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"  class="mt-1 block   focus:border-indigo-500 shadow-sm sm:text-sm" required>
+                            @error('letter')
+                            <p class="text-sm text-red-500"> {{ $message }} </p>
+                            @enderror
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" style="width: 106px !important;">Update</button>
+                        </form>
                     </div>
                 </div>
             </div>
