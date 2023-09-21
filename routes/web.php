@@ -25,6 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::post('/home', [App\Http\Controllers\HomeController::class, 'deleter'])->name('home.deleter');
 
+Route::post('/rectorApplicationChanger', [App\Http\Controllers\HomeController::class, 'rectorApplicationChanger'])->name('home.rectorApplicationChanger');
+
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
 Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
