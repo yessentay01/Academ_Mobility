@@ -186,6 +186,12 @@
         <div class="bg-white rounded p-6 mt-6">
             <h2 class="text-lg font-medium leading-6 text-gray-900">Education</h2>
             <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 pb-2">Application to rector</label>
+                <div class="mt-1 ">
+                    <a class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" target="_blank"  href="{{url('storage/media/applies/' . $application->application_to_rector) }}">Download</a>
+                </div>
+            </div>
+            <div class="mt-4">
                 <label class="block text-sm font-medium text-gray-700 pb-2">Transcript in English</label>
                 <div class="mt-1 ">
                     <a class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" target="_blank"  href="{{url('storage/media/applies/' . $application->transcript) }}">Download</a>
