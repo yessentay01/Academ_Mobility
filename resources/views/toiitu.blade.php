@@ -44,7 +44,7 @@
                 <br><br>
                 <b> DEADLINE: <br>
 
-                    MAY-JUNE <br>
+                    15 November 2023 <br>
                 </b>
             </p>
             <div class="flex justify-center" style="display: flex; flex-direction: row; gap: 30px;">
