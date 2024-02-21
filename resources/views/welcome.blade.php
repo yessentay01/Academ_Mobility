@@ -53,6 +53,7 @@
                     <div class="flex flex-wrap justify-center gap-2">
                         <a href="#universities" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Partner Universities</a>
                         <a href="{{url('/files/mobility-documents.pdf')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Required Documents</a>
+                        <a href="{{url('/files/statement.pdf')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Statement</a>
                    </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
