@@ -42,22 +42,29 @@
                     <p class="mb-1 leading-relaxed">This is studying at a foreign partner university for one semester or academic year, the result of which is a document confirming the learning outcomes (transcript or certificate of study).</p>
                     <div class="mb-6">
                         <b> DEADLINES:</b>
+                        <br><br>
                         <div class="flex flex-wrap gap-2 lg:gap-0">
-                            @foreach($deadLines as $deadLine)
-                                @if($deadLine[2] == 1)
-                                    <div class="basis-full md:basis-2/5 lg:basis-1/2">
-                                        {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
-                                    </div>
-                                @endif
-                            @endforeach
+                            <div class="mb-3">
+                                <b>SOUTHEAST ASIA (2 places):</b>
+                                @foreach($deadLines as $deadLine)
+                                    @if($deadLine[2] == 1)
+                                        <div class="basis-full md:basis-2/5 lg:basis-1/2">
+                                            {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
 
-                            @foreach($deadLines as $deadLine)
-                                @if($deadLine[2] == 2)
-                                    <div class="basis-full md:basis-2/5 lg:basis-1/2">
-                                        {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
-                                    </div>
-                                @endif
-                            @endforeach
+                            <div class="mb-3">
+                                <b>EUROPE (8 places):</b>
+                                @foreach($deadLines as $deadLine)
+                                    @if($deadLine[2] == 2)
+                                        <div class="basis-full md:basis-2/5 lg:basis-1/2">
+                                            {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap justify-center gap-2">
