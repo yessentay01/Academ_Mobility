@@ -28,7 +28,16 @@ class MainController extends Controller
             ['INHA University (South Korea)', '17.03.24', 2],
             ['KAIST (South Korea) (IELTS 6.5)', '17.03.24', 2],
             ['UITM MARA (Malaysia)',  '17.03.24', 2],
-            ['UNITEN (Malaysia)',  '17.03.24', 2]
+            ['UNITEN (Malaysia)',  '17.03.24', 2],
+
+            ['Schmalkalden University (Germany)','27.03.24', 3],
+            ['HOF University (Germany)','27.03.24', 3],
+            ['Ostrava University (Check)','27.03.24', 3],
+            ['Adam Mickiewicz University (Poland)','27.03.24', 3],
+            ['Kyungdong University (South Korea)','27.03.24', 3],
+            ['INHA University (South Korea)','20.03.24', 3],
+            ['KAIST (South Korea) (IELTS 6.5)','27.03.24', 3],
+            ['Innopolis (Russia)','08.04.24', 3]
         ];
 
         return view('welcome', compact('universities', 'deadLines'));

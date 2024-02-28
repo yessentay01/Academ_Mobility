@@ -41,7 +41,23 @@
                     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">ACADEMIC MOBILITY PROGRAM</h1>
                     <p class="mb-1 leading-relaxed">This is studying at a foreign partner university for one semester or academic year, the result of which is a document confirming the learning outcomes (transcript or certificate of study).</p>
                     <div class="mb-6">
-                        <b> DEADLINES:</b>
+                        <b>ACADEMIC MOBILITY DEADLINES:</b>
+                        <br><br>
+                        <div class="flex flex-wrap gap-2 lg:gap-0">
+                            <div class="mb-3">
+                            <div class="mb-3">
+                                @foreach($deadLines as $deadLine)
+                                    @if($deadLine[2] == 3)
+                                        <div class="basis-full md:basis-2/5 lg:basis-1/2">
+                                            {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <b>REPUBLICAN BUDGET DEADLINES:</b>
                         <br><br>
                         <div class="flex flex-wrap gap-2 lg:gap-0">
                             <div class="mb-3">
@@ -70,8 +86,9 @@
                     <div class="flex flex-wrap justify-center gap-2">
                         <a href="#universities" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Partner Universities</a>
                         <a href="{{url('/files/mobility-documents.pdf')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Required Documents</a>
-                        <a href="{{url('/files/statement.docx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Statement</a>
-                   </div>
+                        <a href="{{url('/files/statement.docx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Mobility statement</a>
+                        <a href="{{url('/files/statementBudget.docx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Budget statement</a>
+                    </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
                     <img class="object-cover object-center rounded" alt="hero" src="https://admin.vipusknik.kz/storage/1450/zdanie-universitetajpg.jpeg">
