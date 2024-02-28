@@ -44,16 +44,19 @@
                         <b> DEADLINES:</b>
                         <div class="flex flex-wrap gap-2 lg:gap-0">
                             @foreach($deadLines as $deadLine)
-                                <div class="basis-full md:basis-2/5 lg:basis-1/2">
-                                    @if($deadLine[2] == 1)
+                                @if($deadLine[2] == 1)
+                                    <div class="basis-full md:basis-2/5 lg:basis-1/2">
                                         {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
-                                    @endif
-                                </div>
-                                <div class="basis-full md:basis-2/5 lg:basis-1/2">
-                                    @if($deadLine[2] == 2)
+                                    </div>
+                                @endif
+                            @endforeach
+
+                            @foreach($deadLines as $deadLine)
+                                @if($deadLine[2] == 2)
+                                    <div class="basis-full md:basis-2/5 lg:basis-1/2">
                                         {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
-                                    @endif
-                                </div>
+                                    </div>
+                                @endif
                             @endforeach
                         </div>
                     </div>
