@@ -45,7 +45,6 @@
                         <br><br>
                         <div class="flex flex-wrap gap-2 lg:gap-0">
                             <div class="mb-3">
-                            <div class="mb-3">
                                 @foreach($deadLines as $deadLine)
                                     @if($deadLine[2] == 3)
                                         <div class="basis-full md:basis-2/5 lg:basis-1/2">
