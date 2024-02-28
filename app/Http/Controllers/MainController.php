@@ -11,24 +11,24 @@ class MainController extends Controller
     {
         $universities = University::all();
         $deadLines = [
-//            ["Altinbas University (Türkiye)", "05.10.23"],
-//            ["Halic University (Türkiye)", "05.10.23"],
-//            ["Istanbul Aidyn University (Türkiye)", "05.10.23"],
-//            ["Kyungdong University (South Korea)", "30.09.23"],
-//            ["INHA University (South Korea)", "20.09.23"],
-//            ["KAIST (South Korea)", "30.09.23"],
-//            ["Schmalkalden University (Germany)", "10.11.23"],
-            ["Innopolis University (Russia)", "28.10.23"],
-            ["Сaucasus University (Georgia)", "11.11.2023"],
-            ["Karadeniz Technical university (Turkey)", "11.11.2023"],
-            ["Adam Mickiewicz University (Poland)", "15.10.23"],
-//            ["Innopolis University (Russia)", "05.10.23"],
-            ["ИТМО (Russia)", "05.10.23"],
-            ["ВШЭ (Russia)", "05.10.23"],
-            ["UNIVERSITY OF ŽILINA (Slovak)", "30.09.23"],
-            ["University of Debrecen (Hungary)", "30.09.23"],
-            ["ADA University (Azerbaijan)", "05.10.23"],
-            ["Nigde Omer Halisdemir University (Turkey)", "17.11.2023 (Turkish language level A2)"]
+            ['Schmalkalden University (Germany)', '17.03.24', 1],
+            ['HOF University (Germany)', '17.03.24', 1],
+            ['Ostrava University (Check)', '17.03.24', 1],
+            ['Adam Mickiewicz University (Poland)', '17.03.24', 1],
+            ['UNIVERSITY OF ŽILINA (Slovak)', '17.03.24', 1],
+            ['University of Debrecen (Hungary)', '17.03.24', 1],
+            ['Istanbul Aidyn University (Türkiye)', '17.03.24', 1],
+            ['Gazi University (Türkiye)', '17.03.24', 1],
+            ['Altinbas University (Türkiye)', '17.03.24', 1],
+            ['Halic University (Türkiye)', '17.03.24', 1],
+            ['Nigde omer Halisdemir University (Türkiye)', '17.03.24', 1],
+
+
+            ['Kyungdong University (South Korea)', '17.03.24', 2],
+            ['INHA University (South Korea)', '17.03.24', 2],
+            ['KAIST (South Korea) (IELTS 6.5)', '17.03.24', 2],
+            ['UITM MARA (Malaysia)',  '17.03.24', 2],
+            ['UNITEN (Malaysia)',  '17.03.24', 2]
         ];
 
         return view('welcome', compact('universities', 'deadLines'));

@@ -45,7 +45,14 @@
                         <div class="flex flex-wrap gap-2 lg:gap-0">
                             @foreach($deadLines as $deadLine)
                                 <div class="basis-full md:basis-2/5 lg:basis-1/2">
-                                    {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
+                                    @if($deadLine[2] == 1)
+                                        {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
+                                    @endif
+                                </div>
+                                <div class="basis-full md:basis-2/5 lg:basis-1/2">
+                                    @if($deadLine[2] == 2)
+                                        {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
+                                    @endif
                                 </div>
                             @endforeach
                         </div>
@@ -53,7 +60,7 @@
                     <div class="flex flex-wrap justify-center gap-2">
                         <a href="#universities" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Partner Universities</a>
                         <a href="{{url('/files/mobility-documents.pdf')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Required Documents</a>
-                        <a href="{{url('/files/statement.pdf')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Statement</a>
+                        <a href="{{url('/files/statement.docx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Statement</a>
                    </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
