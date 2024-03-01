@@ -3,6 +3,36 @@
 @section('content')
     <form action="{{route('apply.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
+
+        <div class="md:grid md:grid-cols-3 md:gap-6">
+            <div class="md:col-span-1">
+                <div class="px-4 sm:px-0">
+                    <h3 class="text-lg font-medium leading-6 text-gray-900">Choose type of application</h3>
+                </div>
+            </div>
+            <div class="mt-5 md:col-span-2 md:mt-0 ">
+                <div class="shadow sm:overflow-hidden sm:rounded-md">
+                    <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+                        <div class="col-span-6 sm:col-span-3">
+                            <label for="type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type of Application*</label>
+                            <select id="type" name="level" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                <option selected="true" value="" disabled="disabled">Choose type</option>
+                                <option value="">Self founded</option>
+                                <option value="option2">Republican budget</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hidden sm:block" aria-hidden="true">
+            <div class="py-5">
+                <div class="border-t border-gray-200"></div>
+            </div>
+        </div>
+
         <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
                 <div class="px-4 sm:px-0">
@@ -221,8 +251,8 @@
                                 @enderror
                             </div>
                             <div class="col-span-6">
-                                <label for="motivation" class="block text-sm font-medium text-gray-700">Motivation letter (max 1MB, prefer PDF) *</label>
-                                <input type="file" name="motivation"  id="motivation" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm" required>
+                                <label for="motivation" class="block text-sm font-medium text-gray-700 type-disabled">Motivation letter (max 1MB, prefer PDF) *</label>
+                                <input type="file" name="motivation"  id="motivation" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps" class="mt-1 block  focus:border-indigo-500 shadow-sm sm:text-sm type-disabled" required>
                                 @error('motivation')
                                 <p class="text-sm text-red-500"> {{ $message }} </p>
                                 @enderror
@@ -235,7 +265,7 @@
                                 @enderror
                             </div>
                             <div class="col-span-6">
-                                <label for="transcript" class="block text-sm font-medium text-gray-700">A letter of recommendation from the head of the department, or a teacher in the disciplines (at least an assistant professor) (max 1MB, prefer PDF) *</label>
+                                <label for="transcript" class="block text-sm font-medium text-gray-700 type-another">A letter of recommendation from the head of the department, or a teacher in the disciplines (at least an assistant professor) (max 1MB, prefer PDF) *</label>
                                 <input type="file" name="letter" id="letter" accept="image/jpeg,image/gif,image/png,application/pdf,image/x-eps"  class="mt-1 block   focus:border-indigo-500 shadow-sm sm:text-sm" required>
                                 @error('letter')
                                 <p class="text-sm text-red-500"> {{ $message }} </p>
@@ -300,16 +330,30 @@
 
         <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 shadow dark:bg-gray-700">
             <p>Я подтверждаю что все мои данные верны. <input type="checkbox" style="margin: 0px 30px 0px 5px" required></p>
-            <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150">Apply</button>
+            <button type="submit" id="applyButton" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150">Apply</button>
         </div>
     </form>
     <script>
         $(document).ready(function(){
+            var selectedOption
+
             $('.phone').inputmask('+7 (999)-999-9999');
             $('.iin').inputmask('999999999999');
             $('.pasport').inputmask('N99999999');
             $('.student_id').inputmask('99999');
+            $('#type').change(function (){
+                selectedOption = $(this).val();
 
+                if (selectedOption === 'option2'){
+                    $('.type-disabled').prop('disabled', true);
+                    $('#motivation').prop('required', false);
+                    $('.type-another').text('Confirmation of receipt of benefits (max 1MB, prefer PDF) *');
+                } else {
+                    $('.type-disabled').prop('disabled', false);
+                    $('#motivation').prop('required', true);
+                    $('.type-another').text('A letter of recommendation from the head of the department, or a teacher in the disciplines (at least an assistant professor) (max 1MB, prefer PDF) *');
+                }
+            });
         });
     </script>
 @endsection

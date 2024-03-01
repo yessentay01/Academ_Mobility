@@ -210,7 +210,8 @@
                 </div>
             </div>
             <div class="mt-4">
-                <label class="block text-sm font-medium text-gray-700 pb-2">A letter of recommendation from the head of the department, or a teacher in the disciplines (at least an assistant professor) </label>
+                <label class="block text-sm font-medium text-gray-700 pb-2">A letter of recommendation from the head of the department, or a teacher in the disciplines (at least an assistant professor)<br><br>
+                or Confirmation of receipt of benefits</label>
                 <div class="mt-1">
                     <a class="bg-blue-500 hover:bg-blue-700 text-white font-medium mt-2 py-2 px-4 rounded" target="_blank"  href="{{url('storage/media/applies/' . $application->letter) }}">Download</a>
                 </div>

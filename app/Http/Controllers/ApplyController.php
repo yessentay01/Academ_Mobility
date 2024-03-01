@@ -36,7 +36,6 @@ class ApplyController extends Controller
             'application_to_rector' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
             'passport_scan' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
             'transcript' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
-            'motivation' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
             'confirmation' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
             'letter' => 'required | mimes:pdf,png,webp,jpg,jpeg | max:16384', // 16MB
         ]);
@@ -59,6 +58,8 @@ class ApplyController extends Controller
         if ($request->motivation) {
             $motivation_name = $request->motivation->hashName();
             $request->motivation->storeAs('media/applies/', $motivation_name, 'public');
+        } else {
+            $motivation_name = 'null';
         }
         if ($request->confirmation) {
             $confirmation_name = $request->confirmation->hashName();

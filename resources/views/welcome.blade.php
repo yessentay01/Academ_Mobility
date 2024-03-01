@@ -60,7 +60,7 @@
                         <br><br>
                         <div class="flex flex-wrap gap-2 lg:gap-0">
                             <div class="mb-3">
-                                <b>SOUTHEAST ASIA (2 places):</b>
+                                <b>EUROPE (8 places):</b>
                                 @foreach($deadLines as $deadLine)
                                     @if($deadLine[2] == 1)
                                         <div class="basis-full md:basis-2/5 lg:basis-1/2">
@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <b>EUROPE (8 places):</b>
+                                <b>SOUTHEAST ASIA (2 places):</b>
                                 @foreach($deadLines as $deadLine)
                                     @if($deadLine[2] == 2)
                                         <div class="basis-full md:basis-2/5 lg:basis-1/2">
