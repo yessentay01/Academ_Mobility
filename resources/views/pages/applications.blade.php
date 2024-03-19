@@ -131,6 +131,43 @@
 
             </table>
 
+            <table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em; display: none;">
+                <thead>
+                <tr>
+                    <th data-priority="1">ID</th>
+                    <th data-priority="2">Full name</th>
+                    <th data-priority="3">Phone number</th>
+                    <th data-priority="4">Group</th>
+                    <th data-priority="5">University</th>
+                    <th data-priority="6">Created</th>
+                    <th data-priority="7">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($applies as $apply)
+                    <tr onclick="detailPage({{$apply->application_id}})" >
+                        <td>{{$apply->student_id}}</td>
+                        <td>{{$apply->full_name}}</td> 
+                        <td>{{$apply->phone}}</td>
+                        <td>{{$apply->iin}}</td>
+                        <td>{{$apply->birth}}</td
+                        <td>{{$apply->passport_id}}</td>
+                        <td>{{$apply->course}}</td>
+                        <td>{{$apply->group}}</td>
+                        <td>{{$apply->speciality}}</td>
+                        <td>{{$apply->student_id}}</td>
+                        <td>{{$apply->gpa}}</td>
+                        <td>{{$apply->level}}</td> 
+                        <td>{{$apply->university}}</td>
+                        <td>{{$apply->created_at}}</td>
+                        <td>{{$apply->status ?? 'Not reviewed'}}</td>
+                    </tr>
+                @endforeach
+
+                </tbody>
+
+            </table>
+
 
         </div>
         <!--/Card-->
