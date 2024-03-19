@@ -59,4 +59,6 @@ Route::post('/universities/create', [App\Http\Controllers\UniversitiesController
 
 Route::get('/toiitu', [App\Http\Controllers\ToIITUController::class, 'index'])->name('toiitu');
 
+Route::get('/export-table', 'ExportController@exportTable');
+
 Route::get('send-email', [SendEmailController::class, 'sendEmail']);
