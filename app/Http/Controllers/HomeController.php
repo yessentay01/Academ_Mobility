@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user()->toArray();
-        $applies = Apply::where('email', '=', $user['email'])->get();
+        $applies = Apply::where('email', '=', $user['email'])->latest()->first();
         $status = "";
         if (isset($applies)) {
             if (count($applies) > 0) {
