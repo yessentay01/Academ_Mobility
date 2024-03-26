@@ -38,11 +38,9 @@ class HomeController extends Controller
 
     public function deleter(){
         $user = auth()->user()->toArray();
-        $applies = Apply::where('email', '=', $user['email'])->get();
-        if (isset($applies)) {
-            if (count($applies) > 0) {
-                $applyUser = Apply::where('email', '=', $user['email'])->delete();
-            }
+        $applies = Apply::where('email', '=', $user['email'])->latest()->first();
+        if (isset($applies)) { 
+            $applyUser = Apply::where('email', '=', $user['email'])->delete(); 
         }
         return redirect()->route('home')->with('success', 'Apply deleted successfully');
     }
