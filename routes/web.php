@@ -3,6 +3,7 @@
 use App\Http\Controllers\SendEmailController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,5 @@ Route::get('/toiitu', [App\Http\Controllers\ToIITUController::class, 'index'])->
 Route::get('/export-table', 'ExportController@exportTable');
 
 Route::get('send-email', [SendEmailController::class, 'sendEmail']);
+
+Route::get('/export', function() {return Excel::download(new \App\Exports\ApplyExport(), 'apply.xlsx');})->name('export');
