@@ -19,6 +19,7 @@
                                 <option selected="true" value="" disabled="disabled">Choose type</option>
                                 <option value="">Self founded</option>
                                 <option value="option2">Republican budget</option>
+                                <option value="option3">Erasmus</option>
                             </select>
                         </div>
                     </div>
