@@ -20,6 +20,7 @@
                                 <option value="">Self founded</option>
                                 <option value="option2">Republican budget</option>
                                 <option value="option3">Erasmus</option>
+                                <option value="option4">Double degree program</option>
                             </select>
                         </div>
                     </div>
