@@ -55,38 +55,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-6">
-                        <b>REPUBLICAN BUDGET DEADLINES:</b>
-                        <br><br>
-                        <div class="flex flex-wrap gap-2 lg:gap-0">
-                            <div class="mb-3">
-                                <b>EUROPE (8 places):</b>
-                                @foreach($deadLines as $deadLine)
-                                    @if($deadLine[2] == 1)
-                                        <div class="basis-full md:basis-2/5 lg:basis-1/2">
-                                            {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
-                                        </div>
-                                    @endif
-                                @endforeach
-                            </div>
+{{--                    <div class="mb-6">--}}
+{{--                        <b>REPUBLICAN BUDGET DEADLINES:</b>--}}
+{{--                        <br><br>--}}
+{{--                        <div class="flex flex-wrap gap-2 lg:gap-0">--}}
+{{--                            <div class="mb-3">--}}
+{{--                                <b>EUROPE (8 places):</b>--}}
+{{--                                @foreach($deadLines as $deadLine)--}}
+{{--                                    @if($deadLine[2] == 1)--}}
+{{--                                        <div class="basis-full md:basis-2/5 lg:basis-1/2">--}}
+{{--                                            {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>--}}
+{{--                                        </div>--}}
+{{--                                    @endif--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
 
-                            <div class="mb-3">
-                                <b>SOUTHEAST ASIA (2 places):</b>
-                                @foreach($deadLines as $deadLine)
-                                    @if($deadLine[2] == 2)
-                                        <div class="basis-full md:basis-2/5 lg:basis-1/2">
-                                            {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>
-                                        </div>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
+{{--                            <div class="mb-3">--}}
+{{--                                <b>SOUTHEAST ASIA (2 places):</b>--}}
+{{--                                @foreach($deadLines as $deadLine)--}}
+{{--                                    @if($deadLine[2] == 2)--}}
+{{--                                        <div class="basis-full md:basis-2/5 lg:basis-1/2">--}}
+{{--                                            {{$deadLine[0]}}: <span class="text-red-600">{{$deadLine[1]}}</span>--}}
+{{--                                        </div>--}}
+{{--                                    @endif--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="flex flex-wrap justify-center gap-2">
                         <a href="#universities" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Partner Universities</a>
                         <a href="{{url('/files/requirement.pdf')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Required Documents</a>
-                        <a href="{{url('/files/statement.docx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Mobility statement</a>
-                        <a href="{{url('/files/statementBudget.docx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Budget statement</a>
+                        <a href="{{url('/files/statement2024.docx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Mobility statement</a>
+                        <a href="{{url('/files/huas.docx')}}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" target="_blank">Hof University</a>
                     </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

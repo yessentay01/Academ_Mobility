@@ -11,18 +11,19 @@ class MainController extends Controller
     {
         $universities = University::all();
         $deadLines = [
-            ['Schmalkalden University (Germany)', '17.03.24', 1],
-            ['HOF University (Germany)', '17.03.24', 1],
-            ['Ostrava University (Check)', '17.03.24', 1],
-            ['Adam Mickiewicz University (Poland)', '17.03.24', 1],
-            ['UNIVERSITY OF ŽILINA (Slovak)', '17.03.24', 1],
-            ['University of Debrecen (Hungary)', '17.03.24', 1],
-            ['Istanbul Aidyn University (Türkiye)', '17.03.24', 1],
-            ['Gazi University (Türkiye)', '17.03.24', 1],
-            ['Altinbas University (Türkiye)', '17.03.24', 1],
-            ['Halic University (Türkiye)', '17.03.24', 1],
-            ['Nigde omer Halisdemir University (Türkiye)', '17.03.24', 1],
-
+            ['Schmalkalden University (Germany)', '01.05.24', 1],
+            ['Adam Mickiewicz University (Poland)', '28.04.24', 1],
+            ['University of Debrecen (Hungary)', '28.04.24', 1],
+            ['ADA University (Azerbaijan)', '28.04.24', 1],
+            ['Caucasus University (Georgia)', '15.05.24', 1],
+            ['UNIVERSITY OF ŽILINA (Slovak)', '27.05.24', 1],
+            ['UNITEN (Malaysia)', '01.05.24', 1],
+            ['Istanbul Aidyn University (Türkiye)', '01.05.24', 1],
+            ['Altinbas University (Türkiye)', '15.05.24', 1],
+            ['Halic University (Türkiye)', '15.05.24', 1],
+            ['Gazi University (Türkiye)', '15.05.24', 1],
+            ['Nigde omer Halisdemir University (Türkiye)', '15.05.24', 1],
+            ['Karadeniz Technical University (Türkiye)', '15.05.24', 1],
 
             ['Kyungdong University (South Korea)', '17.03.24', 2],
             ['INHA University (South Korea)', '17.03.24', 2],
